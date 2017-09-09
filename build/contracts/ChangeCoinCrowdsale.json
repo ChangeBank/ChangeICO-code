@@ -1,0 +1,263 @@
+{
+  "contract_name": "ChangeCoinCrowdsale",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "endBlock",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "rate",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "weiRaised",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "startBlock",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "multiSigWallet",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "raisedInPresale",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "finishMinting",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "minContribution",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "hardcap",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "beneficiary",
+          "type": "address"
+        }
+      ],
+      "name": "buyTokens",
+      "outputs": [],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "hasEnded",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "token",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    },
+    {
+      "payable": true,
+      "type": "fallback"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "purchaser",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "beneficiary",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "value",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "TokenPurchase",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "MainSaleClosed",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x60606040526706f05b59d3b20000600955341561001b57600080fd5b5b5b60008054600160a060020a03191633600160a060020a03161790555b621649aa600281905562164ad66003556101f460055560048054600160a060020a03199081167345ba46ddf51791b840cff11c5c122f1419c1c72c179091556001805490911673602c672d21314fbb43ee5c99c2bd2480f41866741790556000600755670de0b6b3a7640000600855439010156100b557600080fd5b60025460035410156100c657600080fd5b5b5b610895806100d76000396000f300606060405236156100b45763ffffffff60e060020a600035041663083c632381146100c65780632c4e722e146100eb5780634042b66f1461011057806348cd4cb1146101355780634b8feb4f1461015a5780637366e3ff146101895780637d64bcb4146101ae5780638da5cb5b146101c3578063aaffadf3146101f2578063b071cbe614610217578063ec8ac4d81461023c578063ecb70fb714610252578063f2fde38b14610279578063fc0c546a1461029a575b6100c45b6100c1336102c9565b5b565b005b34156100d157600080fd5b6100d9610487565b60405190815260200160405180910390f35b34156100f657600080fd5b6100d961048d565b60405190815260200160405180910390f35b341561011b57600080fd5b6100d9610493565b60405190815260200160405180910390f35b341561014057600080fd5b6100d9610499565b60405190815260200160405180910390f35b341561016557600080fd5b61016d61049f565b604051600160a060020a03909116815260200160405180910390f35b341561019457600080fd5b6100d96104ae565b60405190815260200160405180910390f35b34156101b957600080fd5b6100c46104b4565b005b34156101ce57600080fd5b61016d6106f0565b604051600160a060020a03909116815260200160405180910390f35b34156101fd57600080fd5b6100d96106ff565b60405190815260200160405180910390f35b341561022257600080fd5b6100d9610705565b60405190815260200160405180910390f35b6100c4600160a060020a03600435166102c9565b005b341561025d57600080fd5b61026561070b565b604051901515815260200160405180910390f35b341561028457600080fd5b6100c4600160a060020a0360043516610746565b005b34156102a557600080fd5b61016d610791565b604051600160a060020a03909116815260200160405180910390f35b600254600090819043908110156102df57600080fd5b6003548111156102ee57600080fd5b6007543410156102fd57600080fd5b60085461032760095461031b346006546107a090919063ffffffff16565b9063ffffffff6107a016565b111561033257600080fd5b600160a060020a038416151561034757600080fd5b60055434935061035e90849063ffffffff6107ba16565b9150610369826107e9565b60065492019161037f908463ffffffff6107a016565b600655600154600160a060020a03166340c10f19858460006040516020015260405160e060020a63ffffffff8516028152600160a060020a0390921660048301526024820152604401602060405180830381600087803b15156103e157600080fd5b6102c65a03f115156103f257600080fd5b505050604051805190505083600160a060020a031633600160a060020a03167f623b3804fa71d67900d064613da8f94b9617215ee90799290593e1745087ad18858560405191825260208201526040908101905180910390a3600454600160a060020a03163480156108fc0290604051600060405180830381858888f19350505050151561047f57600080fd5b5b5b50505050565b60035481565b60055481565b60065481565b60025481565b600454600160a060020a031681565b60095481565b60008054819033600160a060020a039081169116146104d257600080fd5b6104da61070b565b15156104e557600080fd5b600154600160a060020a03166318160ddd6000604051602001526040518163ffffffff1660e060020a028152600401602060405180830381600087803b151561052d57600080fd5b6102c65a03f1151561053e57600080fd5b5050506040518051925061056c9050602861056084603c63ffffffff6107ba16565b9063ffffffff61084d16565b600154600454919250600160a060020a03908116916340c10f1991168360006040516020015260405160e060020a63ffffffff8516028152600160a060020a0390921660048301526024820152604401602060405180830381600087803b15156105d557600080fd5b6102c65a03f115156105e657600080fd5b50505060405180515050600154600160a060020a0316637d64bcb46000604051602001526040518163ffffffff1660e060020a028152600401602060405180830381600087803b151561063857600080fd5b6102c65a03f1151561064957600080fd5b50505060405180515050600154600054600160a060020a039182169163f2fde38b911660405160e060020a63ffffffff8416028152600160a060020a039091166004820152602401600060405180830381600087803b15156106aa57600080fd5b6102c65a03f115156106bb57600080fd5b5050507f1a67d6e5b402fe0ff129cb2047b6e67ba18b8dde04bb285faed9e709d6b1eb2760405160405180910390a15b5b5050565b600054600160a060020a031681565b60075481565b60085481565b6000806000600354431191506008546107316009546006546107a090919063ffffffff16565b10159050818061073e5750805b92505b505090565b60005433600160a060020a0390811691161461076157600080fd5b600160a060020a0381161561078c5760008054600160a060020a031916600160a060020a0383161790555b5b5b50565b600154600160a060020a031681565b6000828201838110156107af57fe5b8091505b5092915050565b60008282028315806107d657508284828115156107d357fe5b04145b15156107af57fe5b8091505b5092915050565b6000806014835b0490506002546113d80143101561080c57806004029150610844565b600254618ae80143101561082557806003029150610844565b600254620115d00143101561083f57806002029150610844565b600091505b5b5b5b50919050565b600080828481151561085b57fe5b0490508091505b50929150505600a165627a7a72305820a943398a9182351fef32b44ee20fe88df70b34faf36c78791a93b3a4934ddba70029",
+  "networks": {
+    "1500872117756": {
+      "events": {
+        "0x623b3804fa71d67900d064613da8f94b9617215ee90799290593e1745087ad18": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "beneficiary",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "TokenPurchase",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x28acb6973bd76fb1ddece7495478db2f1b4b00a4",
+      "updated_at": 1500872130619
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1504489760622
+}
